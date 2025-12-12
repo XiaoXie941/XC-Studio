@@ -1,0 +1,161 @@
+<Window x:Class="XC_Studio.AnnouncementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XC_Studio"
+        mc:Ignorable="d"
+        Title="系统公告" 
+        Height="450" Width="550"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#FF2D2D30"
+        WindowStyle="None"
+        AllowsTransparency="False">
+    
+    <Window.Resources>
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="3"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF106EBE"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Border BorderBrush="#FF464647" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            
+            <!-- 标题栏 -->
+            <Border Grid.Row="0" Background="#FF0078D4" 
+                   MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- 标题区域（可拖动） -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" 
+                              VerticalAlignment="Center" Margin="20,0">
+                        <TextBlock Text="📢" FontSize="20" Margin="0,0,10,0" 
+                                  VerticalAlignment="Center"/>
+                        <TextBlock Text="XC Studio 系统公告" FontSize="18" 
+                                  FontWeight="Medium" Foreground="White" 
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <!-- 关闭按钮 -->
+                    <Button Grid.Column="1" x:Name="CloseButton" 
+                           Background="Transparent" BorderThickness="0" 
+                           Width="40" Height="40" Padding="0"
+                           Click="CloseButton_Click">
+                        <TextBlock Text="✕" FontSize="16" Foreground="White" 
+                                  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#22FFFFFF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Border>
+            
+            <!-- 内容区域 -->
+            <Border Grid.Row="1" Background="#FF252526">
+                <ScrollViewer PanningMode="VerticalOnly" 
+                             VerticalScrollBarVisibility="Hidden"
+                             HorizontalScrollBarVisibility="Disabled"
+                             Padding="25,20">
+                    <StackPanel>
+                        <TextBlock Text="欢迎使用 XC Studio 1.0 版本！" 
+                                  FontSize="16" FontWeight="Bold" 
+                                  Foreground="White" Margin="0,0,0,10"/>
+                        
+                        <TextBlock Text="发布时间：2024年12月12日" 
+                                  FontSize="12" Foreground="#FFCCCCCC" Margin="0,0,0,20"/>
+                        
+                        <TextBlock FontSize="13" Foreground="#FFF1F1F1" 
+                                  LineHeight="20" TextWrapping="Wrap">
+                            <Run Text="🎉 感谢您选择 XC Studio！我们很高兴向您介绍这个全新的开发工具集。"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="🚀 主要功能特性："/>
+                            <LineBreak/>
+                            <Run Text="• 现代化的用户界面设计，提供流畅的开发体验"/>
+                            <LineBreak/>
+                            <Run Text="• 高效的项目管理和代码编辑功能"/>
+                            <LineBreak/>
+                            <Run Text="• 智能代码补全和语法高亮支持"/>
+                            <LineBreak/>
+                            <Run Text="• 集成调试工具和性能分析器"/>
+                            <LineBreak/>
+                            <Run Text="• 支持多种编程语言和框架"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="💡 使用提示："/>
+                            <LineBreak/>
+                            <Run Text="• 按 Ctrl+N 可以快速创建新项目"/>
+                            <LineBreak/>
+                            <Run Text="• 使用 Ctrl+O 打开现有项目"/>
+                            <LineBreak/>
+                            <Run Text="• F5 键可以快速编译和运行项目"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="📧 如有任何问题或建议，欢迎联系我们的技术支持团队。"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="祝您使用愉快！"/>
+                            <LineBreak/>
+                            <Run Text="XC Studio 开发团队"/>
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+            
+            <!-- 按钮区域 -->
+            <Border Grid.Row="2" Background="#FF3C3C3C" 
+                   BorderBrush="#FF464647" BorderThickness="0,1,0,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                          VerticalAlignment="Center" Margin="20,0">
+                    <Button x:Name="DontShowAgainButton" Content="今日不再显示" 
+                           Background="#FF6C757D" Style="{StaticResource ModernButton}" 
+                           Margin="0,0,10,0" Click="DontShowAgainButton_Click"/>
+                    <Button x:Name="OKButton" Content="确定" 
+                           Style="{StaticResource ModernButton}" 
+                           Click="OKButton_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
