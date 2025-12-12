@@ -15,7 +15,6 @@
 ### 🏠 系统概览
 - **实时系统监控**：CPU使用率、内存占用、磁盘空间和网络状态
 - **高性能刷新**：0.5秒刷新间隔，提供实时性能数据
-- **智能可视化**：使用颜色编码直观显示系统资源使用情况
 
 ### 🌐 网络工具
 - **连接测试**：测试网站连接性和响应时间
@@ -100,13 +99,6 @@ XC_Studio/
 2. 提供详细的复现步骤
 3. 附上系统信息和错误日志
 
-### 提交代码
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
-
 ## 📄 许可证
 
 本项目基于 [MIT License](LICENSE) 开源，详见 [LICENSE](LICENSE) 文件。
@@ -119,9 +111,8 @@ XC_Studio/
 
 ## 📞 联系我们
 
-- **官网**：[www.xc-studio.com](https://www.xc-studio.com)
-- **邮箱**：contact@xc-studio.com
-- **QQ群**：123456789
+- **邮箱**：3899032251@qq.com
+- **QQ群**：901526593
 
 ---
 
